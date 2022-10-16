@@ -53,13 +53,13 @@ public class TestStudentRegistrationForm extends TestData {
             registrationFormPage.openPage();
         });
         step("Fill minimum fields for form", () -> {
-            registrationFormPage.setFirstName(firstName);
+            registrationFormPage.setFirstName(firstName)
+                    .setLastName(lastName)
+                    .setEmail(email)
+                    .setGender(gender)
+                    .setNumber(number)
+                    .clickSubmit();
         });
-        registrationFormPage.setLastName(lastName)
-                .setEmail(email)
-                .setGender(gender)
-                .setNumber(number)
-                .clickSubmit();
         step("Check form results", () -> {
             registrationFormPage.checkResultsTableVisible()
                     .checkResult("Student Name", firstName + " " + lastName)
