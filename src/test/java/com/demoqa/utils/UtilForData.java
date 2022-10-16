@@ -1,4 +1,4 @@
-package demoqa.utils;
+package com.demoqa.utils;
 
 import java.util.Arrays;
 import java.util.List;
