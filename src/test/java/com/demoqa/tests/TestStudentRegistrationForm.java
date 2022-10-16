@@ -44,25 +44,28 @@ public class TestStudentRegistrationForm extends TestData {
                     .checkResult("Address", address)
                     .checkResult("State and City", state + " " + city);
         });
+    }
 
-//    @Test
-//    void fillFormWithMunimumTest() {
-//
-//            step("Open registrations form", () -> {
-//        registrationFormPage.openPage();
-//        });
-//            registrationFormPage.setFirstName(firstName)
-//          .setLastName(lastName)
-//          .setEmail(email)
-//          .setGender(gender)
-//          .setNumber(number)
-//          .clickSubmit();
-//
-//        registrationFormPage.checkResultsTableVisible()
-//          .checkResult("Student Name", firstName + " " + lastName)
-//          .checkResult("Student Email", email)
-//          .checkResult("Gender", gender)
-//          .checkResult("Mobile", number);
-//    }
+    @Test
+    void fillFormWithMinimumTest() {
+
+        step("Open registrations form", () -> {
+            registrationFormPage.openPage();
+        });
+        step("Fill minimum fields for form", () -> {
+            registrationFormPage.setFirstName(firstName);
+        });
+        registrationFormPage.setLastName(lastName)
+                .setEmail(email)
+                .setGender(gender)
+                .setNumber(number)
+                .clickSubmit();
+        step("Check form results", () -> {
+            registrationFormPage.checkResultsTableVisible()
+                    .checkResult("Student Name", firstName + " " + lastName)
+                    .checkResult("Student Email", email)
+                    .checkResult("Gender", gender)
+                    .checkResult("Mobile", number);
+        });
     }
 }
