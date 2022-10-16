@@ -3,6 +3,7 @@ package com.demoqa.tests;
 import com.codeborne.selenide.Configuration;
 import com.demoqa.pages.RegistrationFormPage;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -10,7 +11,7 @@ import static io.qameta.allure.Allure.step;
 public class TestStudentRegistrationForm extends TestData {
 
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
-
+    @DisplayName("Fill full form")
     @Test
     void fillFormTest() {
         step("Open registrations form", () -> {
@@ -45,7 +46,7 @@ public class TestStudentRegistrationForm extends TestData {
                     .checkResult("State and City", state + " " + city);
         });
     }
-
+    @DisplayName("Fill minimum fields form")
     @Test
     void fillFormWithMinimumTest() {
 
