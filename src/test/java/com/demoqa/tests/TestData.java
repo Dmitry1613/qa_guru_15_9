@@ -18,8 +18,8 @@ public class TestData {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-//      capabilities.setCapability("browserName", "chrome");
-//      capabilities.setCapability("browserVersion", "100.0");
+        capabilities.setCapability("browserName", "chrome");
+        capabilities.setCapability("browserVersion", "100.0");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
